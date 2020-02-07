@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>胡思乱想之原生家庭之殇 | Dawn&#39;s Blog</title>
+  <title>二吃一游戏的qt5实现 | Dawn&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从我开始思考之后，我总是绕不过去这个话题。今天可以再直视一次这个话题。这是很无可奈何的一件事情，他给的你不想要，你要的他不想给或者没有能力给。放假第一天，我和zy约着吃了印度菜和下午茶，聊得很丧但是有别样的畅快感。其实我的朋友也不是很多，更多的是停留在浅薄的快乐上，七七、天历，加上现在的卓艳，我想是算得上可以跟我聊得上来的人，TA们聪明、有趣、敏感，这些同类项就是我感到安慰的来源。然而，他们都很确">
-<meta name="keywords" content="胡思乱想系列">
+  <meta name="description" content="“二吃一”棋类游戏设计思路 设计者:qian 负责游戏界面的呈现，以及信号与槽的衔接tao 负责游戏规则的实现设计语言 ：c++，qt库设计文件汇总 chess.h chessform.h help.h one.h chess.cpp chessform.cpp help.cpp main.cpp one.cpp chess.ui help.ui one.ui black.png white.pn">
+<meta name="keywords" content="c++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="胡思乱想之原生家庭之殇">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;04&#x2F;%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3%E4%B9%8B%E5%8E%9F%E7%94%9F%E5%AE%B6%E5%BA%AD%E4%B9%8B%E6%AE%87&#x2F;index.html">
+<meta property="og:title" content="二吃一游戏的qt5实现">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;%E4%BA%8C%E5%90%83%E4%B8%80%E6%B8%B8%E6%88%8F%E7%9A%84qt5%E5%AE%9E%E7%8E%B0&#x2F;index.html">
 <meta property="og:site_name" content="Dawn&#39;s Blog">
-<meta property="og:description" content="从我开始思考之后，我总是绕不过去这个话题。今天可以再直视一次这个话题。这是很无可奈何的一件事情，他给的你不想要，你要的他不想给或者没有能力给。放假第一天，我和zy约着吃了印度菜和下午茶，聊得很丧但是有别样的畅快感。其实我的朋友也不是很多，更多的是停留在浅薄的快乐上，七七、天历，加上现在的卓艳，我想是算得上可以跟我聊得上来的人，TA们聪明、有趣、敏感，这些同类项就是我感到安慰的来源。然而，他们都很确">
+<meta property="og:description" content="“二吃一”棋类游戏设计思路 设计者:qian 负责游戏界面的呈现，以及信号与槽的衔接tao 负责游戏规则的实现设计语言 ：c++，qt库设计文件汇总 chess.h chessform.h help.h one.h chess.cpp chessform.cpp help.cpp main.cpp one.cpp chess.ui help.ui one.ui black.png white.pn">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-04T12:05:34.145Z">
+<meta property="og:updated_time" content="2020-02-07T15:07:34.897Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Dawn&#39;s Blog" type="application/atom+xml">
@@ -161,27 +161,133 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="[layout]-胡思乱想之原生家庭之殇" class="article article-type-[layout] " itemscope itemprop="blogPost">
+            <article id="[layout]-二吃一游戏的qt5实现" class="article article-type-[layout] " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      胡思乱想之原生家庭之殇
+      二吃一游戏的qt5实现
     </h1>
   
 
         
-        <a href="/2020/01/04/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3%E4%B9%8B%E5%8E%9F%E7%94%9F%E5%AE%B6%E5%BA%AD%E4%B9%8B%E6%AE%87/" class="archive-article-date">
-  	<time datetime="2020-01-04T12:04:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
+        <a href="/2020/02/07/%E4%BA%8C%E5%90%83%E4%B8%80%E6%B8%B8%E6%88%8F%E7%9A%84qt5%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+  	<time datetime="2020-02-07T15:06:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>从我开始思考之后，我总是绕不过去这个话题。<br>今天可以再直视一次这个话题。这是很无可奈何的一件事情，他给的你不想要，你要的他不想给或者没有能力给。放假第一天，我和zy约着吃了印度菜和下午茶，聊得很丧但是有别样的畅快感。其实我的朋友也不是很多，更多的是停留在浅薄的快乐上，七七、天历，加上现在的卓艳，我想是算得上可以跟我聊得上来的人，TA们聪明、有趣、敏感，这些同类项就是我感到安慰的来源。<br>然而，他们都很确定要出国了。<br>我试着跟我的父母交流这件事情，无果。说实话，虽然我没有跟任何朋友袒露过我的心迹，但是我是有考虑过这个事情的，当时发在匿名社交上，也受到了很多人的鼓舞和安慰，所以这也是我不动声色地坚持到今天的原因。当然，我之前有意无意地也试探过我的父母，我其实是一直知道他们的态度的，就是完全不同意我出国。毕竟连我要到外地去念大学这件事他们都是很反对的。他们是很中国式的家长，最希望的事情是孩子在眼前找一个稳定的工作，然后成家，让他们有一个温馨的晚年；问题是，我不是一个很中国式的孩子啊，我最渴望的事情是能在这一世能留下飞过的痕迹啊。这是很矛盾的事情，很悲哀的事情。<br>他们不理解我的不安，我的焦虑，我的丧，我也难以接受人生的无为，连碌碌都没有。<br>我和很多人交流，但是我和我的父母费尽心力也没有办法好好说话，然后达成一定的一致。最终只有我妥协，因为我逐渐认识到，我们之间是注定没有办法交流的，我们的隔阂是年龄、智识、交友圈一切的一切造成的。我逐渐理解这一切，我逐渐冷静下来，我逐渐越来越丧。</p>
+        <h3 id="“二吃一”棋类游戏设计思路"><a href="#“二吃一”棋类游戏设计思路" class="headerlink" title="“二吃一”棋类游戏设计思路"></a>“二吃一”棋类游戏设计思路</h3><hr>
+<h4 id="设计者"><a href="#设计者" class="headerlink" title="设计者:"></a>设计者:</h4><h5 id="qian-负责游戏界面的呈现，以及信号与槽的衔接"><a href="#qian-负责游戏界面的呈现，以及信号与槽的衔接" class="headerlink" title="qian 负责游戏界面的呈现，以及信号与槽的衔接"></a>qian 负责游戏界面的呈现，以及信号与槽的衔接</h5><h5 id="tao-负责游戏规则的实现"><a href="#tao-负责游戏规则的实现" class="headerlink" title="tao 负责游戏规则的实现"></a>tao 负责游戏规则的实现</h5><h4 id="设计语言-：c-，qt库"><a href="#设计语言-：c-，qt库" class="headerlink" title="设计语言 ：c++，qt库"></a>设计语言 ：c++，qt库</h4><h4 id="设计文件汇总"><a href="#设计文件汇总" class="headerlink" title="设计文件汇总"></a>设计文件汇总</h4><ul>
+<li>chess.h</li>
+<li>chessform.h</li>
+<li>help.h</li>
+<li>one.h</li>
+<li>chess.cpp</li>
+<li>chessform.cpp</li>
+<li>help.cpp</li>
+<li>main.cpp</li>
+<li>one.cpp</li>
+<li>chess.ui</li>
+<li>help.ui</li>
+<li>one.ui</li>
+<li>black.png</li>
+<li>white.png</li>
+<li>board.png</li>
+<li>help.png</li>
+<li>Minecraft.jpg</li>
+<li>one.jpg</li>
+</ul>
+<h4 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h4><p>1 棋盘绘制</p>
+<ul>
+<li>chess.cpp <blockquote>
+<p>1.1 棋盘背景设置<br>void Chess::paintEvent(QPaintEvent *)</p>
+<blockquote>
+<p>painter.drawPixmap（）//导入背景图board， 棋盘底</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>1.2 棋格线绘制<br>void Chess::resizeEvent(QResizeEvent *event) //设置长宽<br>void Chess::paintEvent(QPaintEvent *)</p>
+<blockquote>
+<p>QPen //绘制棋格线<br>根据页面的长宽设定起始坐标，格子宽度成比例进行绘制，形成4*4的棋盘</p>
+</blockquote>
+</blockquote>
+<p>2 棋子控制</p>
+<blockquote>
+<p>2.1 棋子设置<br> void Chess::InitChess() //初始化棋盘数据<br>根据坐标定位每个格子的位置，和旗子进行对应。<br>void Chess::paintEvent(QPaintEvent *)</p>
+<blockquote>
+<p>QString chessFilename ； QPaint;<br>void Chess::mousePressEvent(QMouseEvent *event) //鼠标控制落子，鼠标右键获取的精确坐标除以格子宽度取整，一边归一化每个格子的坐标<br>void Chess::setChessStatus(void *p) //加载棋子数据 刷新</p>
+</blockquote>
+</blockquote>
+<p>3 界面设置</p>
+<ul>
+<li>chessform.cpp<blockquote>
+<p>3.1 ui设计</p>
+<blockquote>
+<p>在ui文件中直接拖动控件，实现布局</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>3.2 在界面中显示棋盘</p>
+<blockquote>
+<p>在chessform中调用chess.h<br>void ChessForm::Init() </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>3.3绘制当前窗体背景<br>void paintEvent(QPaintEvent *) //MIinecraft.jpg</p>
+</blockquote>
+<blockquote>
+<p>3.4拖动控件，设置双方</p>
+<blockquote>
+<p>3.3.1 void ChessForm::Init()<br>3.3.2 void RoleInit(const QString whiteFilename, const QString blackFilename)<br>3.3.3 人人对战<br>转到槽 void ChessForm::on_btn_pvp_clicked()</p>
+<blockquote>
+<p>界面初始化<br>void setRole(Chess::ChessType currentRole);//设置谁先<br>Chess::ChessType currentRole<br>棋盘初始化<br>void setChessInit()//将Chess::InitChess()移植<br>int formchessData[4][4];<br>void setChessStatus //将窗体里的数据传到棋盘里面去</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>3.3.4 传送信号<br>在ChessForm::Init()中 connect（mychess, SIGNAL(SignalSendChessData(int, int）, this, SLOT(doProcessChessData(int, int))<br>void ChessForm::doProcessChessData(int i, int j)</p>
+</blockquote>
+</blockquote>
+<p>4 增加吃子规则</p>
+<blockquote>
+<p>4.1 通过基于mousePressEvent的Chessform;;doProcessChessData<br>调用blackk函数<br>int blackk（int playerr, int x_1, int y_1, int x_2, int y_2）</p>
+<blockquote>
+<p>int black( int player, int x_1, int y_1, int x_2, int y_2)<br>int move1；//移动<br>int near；//判断相邻<br>int delete_chess;<br>int check;<br>int import;//判断合法</p>
+</blockquote>
+</blockquote>
+<p>5.规则实现</p>
+<blockquote>
+<blockquote>
+<p>5.1 通过鼠标点击输入坐标给blackk函数，返回赢家<br>5.2 通过条件判断，与RoleInit产生联系，控制双方图片的显示，最后剩下的为赢家。<br>5.3 加入QTimer *myTimer，对双方进行计时，超过规定时间，判对方胜利。</p>
+</blockquote>
+</blockquote>
+<p>6.多个页面的传递</p>
+<blockquote>
+<p>6.1 绘制起始页面 one. cpp 起始页面为maindow形式，加入菜单栏（下拉显示作者，版本号，联系方式等信息），设置两个按钮，一个通向游戏界面，一个通向帮助界面。同时在游戏界面设置按钮，向起始页面发送信号，点击重新回到起始页面。</p>
+<blockquote>
+<p>void Initt()<br>void on_pushButton_clicked()<br>void doProcesschessformRequest()<br>void doProcessClinkhelp()</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>6.2 绘制帮助界面，帮助界面中用pixmap呈现游戏规则<br>void paintEvent(QPaintEvent *)</p>
+</blockquote>
+<p>7.main函数<br>main函数中调用one.h,呈现起始页</p>
+<h4 id="后续跟进"><a href="#后续跟进" class="headerlink" title="后续跟进"></a>后续跟进</h4><ul>
+<li>加入人机对战功能，在blackk规则判断函数中增加一个不落子的算法进行判断，传入bool类型形参进行控制</li>
+<li>游戏开始加上游戏背景介绍，可以用动画形式进行衔接</li>
+<li>棋谱的保存，玩家信息的登记（通过账号密码）</li>
+<li>网络对战模式，此模式暂时没有想法。</li>
+</ul>
 
       
 
@@ -195,7 +301,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">胡思乱想系列</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">c++</a>
         		</li>
       		
 		</ul>
@@ -251,7 +357,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/04/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3%E4%B9%8B%E5%8E%9F%E7%94%9F%E5%AE%B6%E5%BA%AD%E4%B9%8B%E6%AE%87/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/07/%E4%BA%8C%E5%90%83%E4%B8%80%E6%B8%B8%E6%88%8F%E7%9A%84qt5%E5%AE%9E%E7%8E%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,18 +371,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/04/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3%E4%B9%8B%E5%86%8D%E8%A7%812019/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          胡思乱想之再见2019
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/25/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3%E4%B9%8B%E5%9C%A3%E8%AF%9E%E5%BF%AB%E4%B9%90/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">胡思乱想之圣诞节</div>
+    <a href="/2020/01/31/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3%E4%B9%8B%E8%BF%99%E6%AC%A1%E5%8F%88%E6%98%AF%E8%B0%81%E7%9A%84%E9%94%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">胡思乱想之这次又是谁的锅</div>
       <i class="icon-circle-right"></i>
     </a>
   

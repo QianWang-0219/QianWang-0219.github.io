@@ -63,7 +63,7 @@
 	        
 			</ul>
 		</nav>
-		     总文章数 8
+		     总文章数 9
         </nav>
 		<nav class="header-smart-menu">
     		
@@ -161,6 +161,186 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="[layout]-二吃一游戏的qt5实现" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/07/%E4%BA%8C%E5%90%83%E4%B8%80%E6%B8%B8%E6%88%8F%E7%9A%84qt5%E5%AE%9E%E7%8E%B0/">二吃一游戏的qt5实现</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/07/%E4%BA%8C%E5%90%83%E4%B8%80%E6%B8%B8%E6%88%8F%E7%9A%84qt5%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+  	<time datetime="2020-02-07T15:06:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="“二吃一”棋类游戏设计思路"><a href="#“二吃一”棋类游戏设计思路" class="headerlink" title="“二吃一”棋类游戏设计思路"></a>“二吃一”棋类游戏设计思路</h3><hr>
+<h4 id="设计者"><a href="#设计者" class="headerlink" title="设计者:"></a>设计者:</h4><h5 id="qian-负责游戏界面的呈现，以及信号与槽的衔接"><a href="#qian-负责游戏界面的呈现，以及信号与槽的衔接" class="headerlink" title="qian 负责游戏界面的呈现，以及信号与槽的衔接"></a>qian 负责游戏界面的呈现，以及信号与槽的衔接</h5><h5 id="tao-负责游戏规则的实现"><a href="#tao-负责游戏规则的实现" class="headerlink" title="tao 负责游戏规则的实现"></a>tao 负责游戏规则的实现</h5><h4 id="设计语言-：c-，qt库"><a href="#设计语言-：c-，qt库" class="headerlink" title="设计语言 ：c++，qt库"></a>设计语言 ：c++，qt库</h4><h4 id="设计文件汇总"><a href="#设计文件汇总" class="headerlink" title="设计文件汇总"></a>设计文件汇总</h4><ul>
+<li>chess.h</li>
+<li>chessform.h</li>
+<li>help.h</li>
+<li>one.h</li>
+<li>chess.cpp</li>
+<li>chessform.cpp</li>
+<li>help.cpp</li>
+<li>main.cpp</li>
+<li>one.cpp</li>
+<li>chess.ui</li>
+<li>help.ui</li>
+<li>one.ui</li>
+<li>black.png</li>
+<li>white.png</li>
+<li>board.png</li>
+<li>help.png</li>
+<li>Minecraft.jpg</li>
+<li>one.jpg</li>
+</ul>
+<h4 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h4><p>1 棋盘绘制</p>
+<ul>
+<li>chess.cpp <blockquote>
+<p>1.1 棋盘背景设置<br>void Chess::paintEvent(QPaintEvent *)</p>
+<blockquote>
+<p>painter.drawPixmap（）//导入背景图board， 棋盘底</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>1.2 棋格线绘制<br>void Chess::resizeEvent(QResizeEvent *event) //设置长宽<br>void Chess::paintEvent(QPaintEvent *)</p>
+<blockquote>
+<p>QPen //绘制棋格线<br>根据页面的长宽设定起始坐标，格子宽度成比例进行绘制，形成4*4的棋盘</p>
+</blockquote>
+</blockquote>
+<p>2 棋子控制</p>
+<blockquote>
+<p>2.1 棋子设置<br> void Chess::InitChess() //初始化棋盘数据<br>根据坐标定位每个格子的位置，和旗子进行对应。<br>void Chess::paintEvent(QPaintEvent *)</p>
+<blockquote>
+<p>QString chessFilename ； QPaint;<br>void Chess::mousePressEvent(QMouseEvent *event) //鼠标控制落子，鼠标右键获取的精确坐标除以格子宽度取整，一边归一化每个格子的坐标<br>void Chess::setChessStatus(void *p) //加载棋子数据 刷新</p>
+</blockquote>
+</blockquote>
+<p>3 界面设置</p>
+<ul>
+<li>chessform.cpp<blockquote>
+<p>3.1 ui设计</p>
+<blockquote>
+<p>在ui文件中直接拖动控件，实现布局</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>3.2 在界面中显示棋盘</p>
+<blockquote>
+<p>在chessform中调用chess.h<br>void ChessForm::Init() </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>3.3绘制当前窗体背景<br>void paintEvent(QPaintEvent *) //MIinecraft.jpg</p>
+</blockquote>
+<blockquote>
+<p>3.4拖动控件，设置双方</p>
+<blockquote>
+<p>3.3.1 void ChessForm::Init()<br>3.3.2 void RoleInit(const QString whiteFilename, const QString blackFilename)<br>3.3.3 人人对战<br>转到槽 void ChessForm::on_btn_pvp_clicked()</p>
+<blockquote>
+<p>界面初始化<br>void setRole(Chess::ChessType currentRole);//设置谁先<br>Chess::ChessType currentRole<br>棋盘初始化<br>void setChessInit()//将Chess::InitChess()移植<br>int formchessData[4][4];<br>void setChessStatus //将窗体里的数据传到棋盘里面去</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>3.3.4 传送信号<br>在ChessForm::Init()中 connect（mychess, SIGNAL(SignalSendChessData(int, int）, this, SLOT(doProcessChessData(int, int))<br>void ChessForm::doProcessChessData(int i, int j)</p>
+</blockquote>
+</blockquote>
+<p>4 增加吃子规则</p>
+<blockquote>
+<p>4.1 通过基于mousePressEvent的Chessform;;doProcessChessData<br>调用blackk函数<br>int blackk（int playerr, int x_1, int y_1, int x_2, int y_2）</p>
+<blockquote>
+<p>int black( int player, int x_1, int y_1, int x_2, int y_2)<br>int move1；//移动<br>int near；//判断相邻<br>int delete_chess;<br>int check;<br>int import;//判断合法</p>
+</blockquote>
+</blockquote>
+<p>5.规则实现</p>
+<blockquote>
+<blockquote>
+<p>5.1 通过鼠标点击输入坐标给blackk函数，返回赢家<br>5.2 通过条件判断，与RoleInit产生联系，控制双方图片的显示，最后剩下的为赢家。<br>5.3 加入QTimer *myTimer，对双方进行计时，超过规定时间，判对方胜利。</p>
+</blockquote>
+</blockquote>
+<p>6.多个页面的传递</p>
+<blockquote>
+<p>6.1 绘制起始页面 one. cpp 起始页面为maindow形式，加入菜单栏（下拉显示作者，版本号，联系方式等信息），设置两个按钮，一个通向游戏界面，一个通向帮助界面。同时在游戏界面设置按钮，向起始页面发送信号，点击重新回到起始页面。</p>
+<blockquote>
+<p>void Initt()<br>void on_pushButton_clicked()<br>void doProcesschessformRequest()<br>void doProcessClinkhelp()</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>6.2 绘制帮助界面，帮助界面中用pixmap呈现游戏规则<br>void paintEvent(QPaintEvent *)</p>
+</blockquote>
+<p>7.main函数<br>main函数中调用one.h,呈现起始页</p>
+<h4 id="后续跟进"><a href="#后续跟进" class="headerlink" title="后续跟进"></a>后续跟进</h4><ul>
+<li>加入人机对战功能，在blackk规则判断函数中增加一个不落子的算法进行判断，传入bool类型形参进行控制</li>
+<li>游戏开始加上游戏背景介绍，可以用动画形式进行衔接</li>
+<li>棋谱的保存，玩家信息的登记（通过账号密码）</li>
+<li>网络对战模式，此模式暂时没有想法。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">c++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/07/%E4%BA%8C%E5%90%83%E4%B8%80%E6%B8%B8%E6%88%8F%E7%9A%84qt5%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="[layout]-胡思乱想之这次又是谁的锅" class="article article-type-[layout]  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -878,6 +1058,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">c++</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">生活杂记</a>
