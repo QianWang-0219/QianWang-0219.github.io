@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>二吃一游戏的qt5实现 | Dawn&#39;s Blog</title>
+  <title>二吃一游戏的qt5实现 | Qian&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="“二吃一”棋类游戏设计思路 设计者:qian 负责游戏界面的呈现，以及信号与槽的衔接tao 负责吃子规则的实现设计语言 ：c++，qt库设计文件汇总 chess.h chessform.h help.h one.h chess.cpp chessform.cpp help.cpp main.cpp one.cpp chess.ui help.ui one.ui black.png white.pn">
+  <meta name="description" content="“二吃一”棋类游戏设计思路 设计者:qian 负责游戏界面的呈现，以及信号与槽的衔接tao 负责吃子规则的实现css">
 <meta name="keywords" content="c++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二吃一游戏的qt5实现">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;%E4%BA%8C%E5%90%83%E4%B8%80%E6%B8%B8%E6%88%8F%E7%9A%84qt5%E5%AE%9E%E7%8E%B0&#x2F;index.html">
-<meta property="og:site_name" content="Dawn&#39;s Blog">
-<meta property="og:description" content="“二吃一”棋类游戏设计思路 设计者:qian 负责游戏界面的呈现，以及信号与槽的衔接tao 负责吃子规则的实现设计语言 ：c++，qt库设计文件汇总 chess.h chessform.h help.h one.h chess.cpp chessform.cpp help.cpp main.cpp one.cpp chess.ui help.ui one.ui black.png white.pn">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-07T15:11:59.176Z">
+<meta property="og:site_name" content="Qian&#39;s Blog">
+<meta property="og:description" content="“二吃一”棋类游戏设计思路 设计者:qian 负责游戏界面的呈现，以及信号与槽的衔接tao 负责吃子规则的实现css">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-02T14:26:38.071Z">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Dawn&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Qian&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -42,7 +42,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #223a70"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -51,6 +51,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Qian Wang</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">人间喝酒，天上写诗</p>
 		
 
 		<nav class="header-menu">
@@ -88,7 +90,7 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/qianwang0219" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="http://zhihu.com/people/qianwang-0219" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 					<a class="mail" target="_blank" href="/wang.qian2000@outlook.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -101,7 +103,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #223a70"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -113,6 +115,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Qian Wang</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人间喝酒，天上写诗<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -131,7 +135,7 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/qianwang0219" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="http://zhihu.com/people/qianwang-0219" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 						<a class="mail" target="_blank" href="/wang.qian2000@outlook.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -182,7 +186,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="“二吃一”棋类游戏设计思路"><a href="#“二吃一”棋类游戏设计思路" class="headerlink" title="“二吃一”棋类游戏设计思路"></a>“二吃一”棋类游戏设计思路</h3><hr>
-<h4 id="设计者"><a href="#设计者" class="headerlink" title="设计者:"></a>设计者:</h4><h5 id="qian-负责游戏界面的呈现，以及信号与槽的衔接"><a href="#qian-负责游戏界面的呈现，以及信号与槽的衔接" class="headerlink" title="qian 负责游戏界面的呈现，以及信号与槽的衔接"></a>qian 负责游戏界面的呈现，以及信号与槽的衔接</h5><h5 id="tao-负责吃子规则的实现"><a href="#tao-负责吃子规则的实现" class="headerlink" title="tao 负责吃子规则的实现"></a>tao 负责吃子规则的实现</h5><h4 id="设计语言-：c-，qt库"><a href="#设计语言-：c-，qt库" class="headerlink" title="设计语言 ：c++，qt库"></a>设计语言 ：c++，qt库</h4><h4 id="设计文件汇总"><a href="#设计文件汇总" class="headerlink" title="设计文件汇总"></a>设计文件汇总</h4><ul>
+<h4 id="设计者"><a href="#设计者" class="headerlink" title="设计者:"></a>设计者:</h4><h5 id="qian-负责游戏界面的呈现，以及信号与槽的衔接"><a href="#qian-负责游戏界面的呈现，以及信号与槽的衔接" class="headerlink" title="qian 负责游戏界面的呈现，以及信号与槽的衔接"></a>qian 负责游戏界面的呈现，以及信号与槽的衔接</h5><h5 id="tao-负责吃子规则的实现"><a href="#tao-负责吃子规则的实现" class="headerlink" title="tao 负责吃子规则的实现"></a>tao 负责吃子规则的实现</h5><p>css<a id="more"></a></p>
+<h4 id="设计语言-：c-，qt库"><a href="#设计语言-：c-，qt库" class="headerlink" title="设计语言 ：c++，qt库"></a>设计语言 ：c++，qt库</h4><h4 id="设计文件汇总"><a href="#设计文件汇总" class="headerlink" title="设计文件汇总"></a>设计文件汇总</h4><ul>
 <li>chess.h</li>
 <li>chessform.h</li>
 <li>help.h</li>
@@ -508,15 +513,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">胡思乱想系列</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">生活杂记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">c++</a>
               </li>
             
             <div class="clearfix"></div>
